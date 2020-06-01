@@ -1,0 +1,18 @@
+name: 'Cloudflare DNSLink'
+description: 'Action that updates a Cloudflare DNS record to an IPFS hash'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  zone:
+    description: 'Name of the Cloudflare zone (domain name)'
+    required: true
+  record:
+    description: 'DNS record name. Either "_dnslink" or "_dnslink.subdomain"'
+    required: true
+  hash:
+    description: 'IPFS hash to record'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dnslink.js'
